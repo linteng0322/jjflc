@@ -8,7 +8,7 @@
 <%@ taglib prefix="d" uri="https://github.com/xpjsky/devices/tags" %>
 <html>
 <head>
-	<title>UITG Consulting</title>
+	<title>JXF</title>
 	
 	<%@ include file="../includes/jsheader.jsp"%> 
     <script type="text/javascript">

@@ -9,7 +9,7 @@
 <html>
 <head>
 	
-	<title>UITG Consulting</title>
+	<title>JXF</title>
 	
 	<%@ include file="../includes/jsheader.jsp"%> 
 	
@@ -65,7 +65,7 @@
 			        <th><sp:message code="label.phone"/></th>
 			        <th><sp:message code="label.status"/></th>
 			        <th><sp:message code="label.quality"/></th>
-			        <th><sp:message code="label.bankinfo"/></th>
+			        <th><sp:message code="label.stock"/></th>
 			        <th>&nbsp;</th>
 			        <th>&nbsp;</th>
 			        <th>&nbsp;</th>

@@ -1,79 +1,63 @@
-   <ul class="dropdown-menu" style="display:block !important;">
-          <sec:authorize ifAnyGranted="ROLE_USER">
-             <li id="corder">
-               <a href="<c:url value="/order/createorder"/>">
-                 <sp:message code="label.placeneworder"/>
-               </a>
-             </li>
-             <li id="ordlist">
-               <a href="<c:url value="/order/orderlist"/>">
-                 <sp:message code="label.orderhistory"/>
-               </a>
-             </li>
-          </sec:authorize>
-          <sec:authorize ifAnyGranted="ROLE_FREELANCER">
-             <li id="latesttask">
-               <a href="<c:url value="/order/tasklist?status=F"/>">
-                 <sp:message code="label.latesttask"/>
-               </a>
-             </li>
-             <li id="tasklist">
-               <a href="<c:url value="/order/tasklist"/>">
-                 <sp:message code="label.mytask"/>
-               </a>
-             </li>
-          </sec:authorize>
-          <sec:authorize ifAnyGranted="ROLE_USER,ROLE_FREELANCER">
-             <li id="edituser">
-                <a href="<c:url value="/user/edit?mode=Y"/>">
-                 <sp:message code="label.userinfo"/>
-               </a>
-             </li>
-          </sec:authorize>
-           <sec:authorize ifAnyGranted="ROLE_USER">
-             <li id="uitgbank">
-               <a href="<c:url value="/bank/view"/>">
-                 Uitg <sp:message code="label.bankinfo"/>
-               </a>
-             </li>
-           </sec:authorize>
-          <sec:authorize ifAnyGranted="ROLE_ADMIN,ROLE_SYSUSER,ROLE_FREELANCER,ROLE_SALES,ROLE_FINANCE,ROLE_PROJECTMANAGER">
-             <li id="bankedit">
-               <a href="<c:url value="/bank/edit"/>">
-                 <sp:message code="label.bankinfo"/>
-               </a>
-             </li>
-           </sec:authorize>
-           <sec:authorize ifAnyGranted="ROLE_ADMIN,ROLE_SYSUSER,ROLE_SALES,ROLE_FINANCE,ROLE_PROJECTMANAGER">
-              <li>
-               <a>
-                 <sp:message code="label.admin"/>
-               </a>
-             </li>
-             <li id="allorder">
-               <a href="<c:url value="/order/allorderlist"/>">
-                 &nbsp;&nbsp;&nbsp;&nbsp;<sp:message code="label.allorder"/>
-               </a>
-             </li>
-              <li id="clist">
-               <a href="<c:url value="/user/clientlist"/>">
-                 &nbsp;&nbsp;&nbsp;&nbsp;<sp:message code="label.client"/>
-               </a>
-             </li>
-              <li id="flist">
-               <a href="<c:url value="/user/freelancerList"/>">
-                 &nbsp;&nbsp;&nbsp;&nbsp;<sp:message code="label.freelancer"/>
-               </a>
-             </li>
-              <li id="currlist">
-               <a href="<c:url value="/currency/list"/>">
-                 &nbsp;&nbsp;&nbsp;&nbsp;<sp:message code="label.currency"/>
-               </a>
-             </li>
-              <li id="industrylist">
-               <a href="<c:url value="/industry/list"/>">
-                 &nbsp;&nbsp;&nbsp;&nbsp;<sp:message code="label.industry"/>
-               </a>
-             </li>
-           </sec:authorize>
-   </ul>
+<script type="text/javascript">
+$(document).ready(function(){
+	 $.ajax({         
+         type: "POST",
+         dataType : "text",
+         url:"${pageContext.request.contextPath}/material/findriskmaterialsize",
+         //data:"",
+         contentType: "text/html; charset=utf-8",
+         error: function(XMLHttpRequest, textStatus, errorThrown) {
+             //alert(XMLHttpRequest.status);
+             //alert(XMLHttpRequest.readyState);
+             //alert(textStatus);
+             alert("Retrieve material size error!");
+         },
+         success: function(data) {
+        	 if(data>0){
+        	 $("#msize").html("("+data+")");
+        	 }
+         }
+     });
+});
+</script>
+<ul class="dropdown-menu" style="display: block !important;">
+	<sec:authorize
+		ifAnyGranted="ROLE_ADMIN,ROLE_SYSUSER,ROLE_SALES,ROLE_FINANCE,ROLE_PROJECTMANAGER">
+		<li><a href="<c:url value="/jxforder/out"/>"> <sp:message
+					code="label.orderout" />
+		</a></li>
+		<li><a href="<c:url value="/transaction/batchout"/>"> <sp:message
+					code="label.transactionsout" />
+		</a></li>
+		<li><a href="<c:url value="/transaction/batchin"/>"> <sp:message
+					code="label.transactionin" />
+		</a></li>
+		<li id="transactionsearch"><a
+			href="<c:url value="/transaction/alltransactionlist"/>"> <sp:message
+					code="label.transactionsearch" />
+		</a></li>
+		<li><a href="<c:url value="/transaction/out"/>"> <sp:message
+					code="label.transactionout" />
+		</a></li>
+		<li id="transactionin"><a href="<c:url value="/transaction/in"/>">
+				<sp:message code="label.transactionin" />
+		</a></li>
+		<li id="materiallist"><a
+			href="<c:url value="/material/allmateriallist"/>"> <sp:message
+					code="label.materialmaintain" />
+		</a></li>
+		<li id="materialgrouplist"><a
+			href="<c:url value="/materialgroup/allmaterialgrouplist"/>"> <sp:message
+					code="label.materialgroup" />
+		</a></li>
+		<li id="materiallist"><a
+			href="<c:url value="/customer/allcustomerlist"/>"> <sp:message
+					code="label.customer" />
+		</a></li>
+		<li id="materiallist"><a
+			href="<c:url value="/material/searchriskmaterial"/>"> <sp:message
+					code="label.materialrisk" />
+					<label style="color:red" id="msize"></label>
+		</a></li>
+	</sec:authorize>
+</ul>

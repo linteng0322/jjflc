@@ -28,7 +28,7 @@
     	</description>
     	<display-name>EncryptionServlet</display-name>
     	<servlet-name>EncryptionServlet</servlet-name>
-    	<servlet-class>com.uitg.oa.util.EncryptionServlet</servlet-class>
+    	<servlet-class>com.jxf.oa.util.EncryptionServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -59,7 +59,7 @@
 
     <filter>  
         <filter-name>jcaptchaFilter</filter-name>  
-        <filter-class>com.uitg.oa.util.jcaptcha.JCaptchaFilter</filter-class>  
+        <filter-class>com.jxf.oa.util.jcaptcha.JCaptchaFilter</filter-class>  
         <init-param>  
             <param-name>failureUrl</param-name>  
             <param-value>/login?error=verifycode</param-value>  

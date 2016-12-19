@@ -18,7 +18,7 @@
 
     <mvc:annotation-driven conversion-service="conversionService" validator="validator"/>
 
-    <context:component-scan base-package="com.uitg.oa.controller"/>
+    <context:component-scan base-package="com.jxf.oa.controller"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
 		<property name="prefix" value="/WEB-INF/views/" />  
@@ -28,7 +28,7 @@
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="com.uitg.oa.converter.UserConverter"/>
+                <bean class="com.jxf.oa.converter.UserConverter"/>
             </set>
         </property>
     </bean>

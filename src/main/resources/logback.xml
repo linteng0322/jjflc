@@ -7,10 +7,10 @@
     </appender>
     
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">   
-	    <file>${CATALINA_HOME}/logs/uitg.log</file>  
+	    <file>${CATALINA_HOME}/logs/jxf.log</file>  
 	   
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">   
-	      <fileNamePattern>uitg.%d{yyyy-MM-dd}.log</fileNamePattern>   
+	      <fileNamePattern>jxf.%d{yyyy-MM-dd}.log</fileNamePattern>   
           <maxHistory>30</maxHistory>      
 	    </rollingPolicy>   
 	   

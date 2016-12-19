@@ -12,7 +12,7 @@
     <!-- Invoke 'Generate' action to add tags or functions -->
     <tag>
         <name>pagination</name>
-        <tag-class>com.uitg.oa.tag.PageBarTag</tag-class>
+        <tag-class>com.jxf.oa.tag.PageBarTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>page</name>

@@ -2,10 +2,10 @@
 	<header id="titlebar">
 
 
-		<a href="http://www.uitg.co/" name="logo"  id="logo"></a>
+		<a href="http:///" name="logo"  id="logo"></a>
 
 		<ul id="top_menu">
-           <li id ="index" class="current-menu-item">
+           <!-- <li id ="index" class="current-menu-item">
 				<a href="/uitg/index">Home</a>
 			</li>
 			<li id="about">
@@ -45,9 +45,9 @@
 			</li>
 			<li id="cs">
 				<a href="/uitg/contactus">Contact Us</a>
-			</li>
+			</li> -->
 			<li id="erp">
-				<a href="/uitg/erp">Login</a>
+				<a href="/jxf/erp">Login</a>
 				<ul class="dropdown-menu" role="menu">                 
                     <li><a href="<c:url value="/logout"/>">
                         <sp:message code="app.logout"/>

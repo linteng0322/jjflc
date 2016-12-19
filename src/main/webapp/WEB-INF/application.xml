@@ -14,8 +14,8 @@
                http://www.springframework.org/schema/context
                http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
 
-    <context:component-scan base-package="com.uitg.oa.dao"/>
-    <context:component-scan base-package="com.uitg.oa.services"/>
+    <context:component-scan base-package="com.jxf.oa.dao"/>
+    <context:component-scan base-package="com.jxf.oa.services"/>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
@@ -25,7 +25,7 @@
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
-        <property name="packagesToScan" value="com.uitg.oa.entity"/>
+        <property name="packagesToScan" value="com.jxf.oa.entity"/>
     </bean>
 
     <jee:jndi-lookup id="dataSource" jndi-name="jdbc/cmdb"/>
@@ -49,7 +49,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut expression="execution(* com.uitg.oa.services.*.*(..))" id="servicesOperation"/>
+        <aop:pointcut expression="execution(* com.jxf.oa.services.*.*(..))" id="servicesOperation"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="servicesOperation"/>
     </aop:config>
 

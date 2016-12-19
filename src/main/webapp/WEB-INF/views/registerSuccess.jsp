@@ -42,7 +42,7 @@
                     
                     <div class="form-group">	                 
                         <div class="col-md-offset-3 col-md-2">
-                          <a href="/uitg/login" ><sp:message code="operate.ok"/></a>
+                          <a href="/jxf/login" ><sp:message code="operate.ok"/></a>
                          </div>
 	                </div>
 

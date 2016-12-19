@@ -9,7 +9,7 @@
 <html>
 <head>
 	
-	<title>UITG Consulting</title>
+	<title>JXF</title>
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css" type="text/css" />

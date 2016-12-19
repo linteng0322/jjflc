@@ -9,7 +9,7 @@
 <html>
 <head>
 	
-	<title>UITG Consulting</title>
+	<title>JXF</title>
 	
 	<%@ include file="../includes/jsheader.jsp"%> 
     <script type="text/javascript">

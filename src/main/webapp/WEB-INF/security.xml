@@ -35,7 +35,7 @@
     <http pattern="/contactus" security="none"/>
   
     <http auto-config="true" use-expressions="false">
-        <intercept-url pattern="/**" access="ROLE_SYSUSER,ROLE_USER,ROLE_ADMIN,ROLE_FREELANCER,ROLE_SALES,ROLE_FINANCE,ROLE_PROJECTMANAGER" />
+        <intercept-url pattern="/**" access="ROLE_ADMIN" />
        
         <form-login login-page="/login" login-processing-url="/security_check" default-target-url="/erp"
                     authentication-failure-url="/login?error=true" />
@@ -52,7 +52,7 @@
         </authentication-provider>
     </authentication-manager>
     
-    <b:bean id="passwordEncoder" class="com.uitg.oa.util.MyPasswordEncoder">
+    <b:bean id="passwordEncoder" class="com.jxf.oa.util.MyPasswordEncoder">
 	    
 	</b:bean>
     <!--
@@ -62,7 +62,7 @@
 	</authentication-manager>
  
 	<b:bean id="loginAuthenticationProvider"
-	    class="com.uitg.oa.util.LoginAuthenticationProvider">
+	    class="com.jxf.oa.util.LoginAuthenticationProvider">
 	    <b:property name="userDetailsService" ref="userService"></b:property>
 	</b:bean>
       -->  
@@ -72,7 +72,7 @@
     <b:bean id="captchaService"  
         class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">  
         <b:property name="captchaEngine">  
-            <b:bean class="com.uitg.oa.util.jcaptcha.GMailEngine" />  
+            <b:bean class="com.jxf.oa.util.jcaptcha.GMailEngine" />  
         </b:property>  
         <!-- 默认生成的图片180秒过期 , 可另行设置   
         <property name="minGuarantedStorageDelayInSeconds" value="180" />  
